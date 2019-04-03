@@ -1,0 +1,55 @@
+.heading{
+    color: white;
+    text-align: center;
+    background-color: black;
+    margin-top: 0%;
+}
+.header{
+    background-color: black;
+    height: 60px;
+    padding-top: 40px;
+}
+body,html{
+    margin: 0%;
+    width:100%;
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+.colorOne{
+    color: black;
+}
+.colorTwo{
+    color:gray;
+}
+#area div{
+    display: inline-flex;
+    margin-right: 210px;
+    color:black;
+    width: 50px;
+    
+}
+#area div{
+    padding-top: 10px;
+}
+.delete{
+    background-color: rgb(241, 146, 146);
+    border: none;
+    color: white;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

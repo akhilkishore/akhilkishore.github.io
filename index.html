@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phone Directory Application</title>
+    <link rel="stylesheet" type="text/css" href="main.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div class="header">
+<h3 id="hOne" class="heading">PHONE DIRECTORY</h3>
+<h3 id="hTwo" class="heading" style="display: none;">ADD SUBSCRIBER</h3>
+
+</div>
+<div id="containerOne" class="colorTwo" style="margin-top:50px;margin-left: 50px;">
+    <button class="button" id="btnOne">ADD</button><br>
+    <h6 style="display:inline-block;margin-right: 200px; font-size: 15px;">NAME     </h6>
+    <h6 style="display:inline-block;font-size: 15px;"> PHONE</h6>
+    <div id="area" >
+        
+    </div>
+</div>
+<div ng-app="" id="containerTwo" style="margin-top:50px;margin-left: 50px;display: none;" class="colorTwo">
+    <form name="form">
+        <span id="btnTwo" class="colorOne" style="font-size:16px;">Back</span><br><br>
+        <span>Name :</span><br>
+        <input type="text" name="name" ng-model="name"><br><br>
+        <span>Phone :</span><br>
+        <input type="text" name="number" ng-model="number"><br><br>
+        <span class="colorOne">Subscriber to be added :</span><br>
+        <span>Name : {{name}}</span><br>
+        <span>Phone : {{number}}</span><br>
+        <br><button id="btnThree" class="button">ADD</button><br>
+    </form>
+</div>
+<script>
+    document.getElementById("btnOne").onclick = second;
+    function second(){
+        document.getElementById("containerOne").style.display = "none";
+        document.getElementById("hOne").style.display = "none";
+        document.getElementById("hTwo").style.display = "block";
+        document.getElementById("containerTwo").style.display = "block";
+
+    }
+
+    document.getElementById("btnTwo").onclick = first;
+    function first(){
+        document.getElementById("containerTwo").style.display = "none";
+        document.getElementById("hTwo").style.display = "none";
+        document.getElementById("hOne").style.display = "block";
+        document.getElementById("containerOne").style.display = "block";
+
+    }
+
+    document.getElementById("btnThree").onclick = add;
+    var count = 0;
+    function add(){
+        count++;
+        var name = document.forms["form"]["name"].value;
+        var phone =  document.forms["form"]["number"].value;
+        var sec = document.createElement("div1");
+        var para1 = document.createElement("div");
+        var para2 = document.createElement("div");
+        var bt = document.createElement("button");
+        var br = document.createElement("br");
+        var att3 =  document.createAttribute("class");
+        att3.value = "delete";
+        var att = document.createAttribute("id");
+        att.value = "delete"+count; 
+        bt.setAttributeNode(att);
+        var att2 = document.createAttribute("onclick");
+        att2.value = "del(this.id)";
+        bt.setAttributeNode(att2);
+        bt.setAttributeNode(att3);
+
+        var node1 = document.createTextNode(name);
+        var node2 = document.createTextNode(phone);
+        var del = document.createTextNode("DELETE");
+        bt.append(del);
+        para1.appendChild(node1);
+        para2.appendChild(node2);
+        sec.append(para1);
+        sec.append(para2);
+        sec.append(bt);
+        sec.append(br);
+        var element = document.getElementById("area");
+        element.appendChild(sec);
+        first();
+    }
+    //document.getElementById("delete").onclick= del;
+    function del(id){
+        //var child = document.getElementById("delete");
+        //var parent1 = child.parentNode;
+        //parent1.parentNode.removeChild(parent1);
+        var id_num = id;
+        var child =  document.getElementById(id_num);
+        var parent1 = child.parentNode;
+        parent1.parentNode.removeChild(parent1);
+    }
+
+
+</script>
+</body>
+</html>
